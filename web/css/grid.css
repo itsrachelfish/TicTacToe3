@@ -14,6 +14,24 @@
     opacity: 0.8;
 }
 
+/* No outside borders */
+
+.grid tr:first-child td {
+    border-top-color: transparent;
+}
+
+.grid tr:last-child td {
+    border-bottom-color: transparent;
+}
+
+.grid tr td:first-child {
+    border-left-color: transparent;
+}
+
+.grid tr td:last-child {
+    border-right-color: transparent;
+}
+
 /* Hovering selections */
 
 .grid:not([data-turn="NULL"]) td:hover {
