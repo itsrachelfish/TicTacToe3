@@ -1,0 +1,40 @@
+dialog {
+    background-color: #fafafa;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+    border: none;
+    border-radius: 2px;
+    top: 10%;
+    padding: 10px 10px 30px 10px;
+}
+
+dialog#gameover h2 {
+    margin-bottom: 0;
+}
+
+dialog#gameover button {
+    margin-top: 50px;
+}
+
+dialog#gameover .winner {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+}
+
+dialog#gameover .winner[data-winner="X"] {
+    background-image: url(../img/player_X.svg);
+}
+
+dialog#gameover .winner[data-winner="O"] {
+    background-image: url(../img/player_O.svg);
+}
+
+dialog#gameover .winner[data-winner="D"] {
+    background-image: url(../img/player_D.svg);
+}

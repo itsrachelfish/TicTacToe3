@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+@import url(grid.css);
+@import url(material.css);
+@import url(modal.css);
+@import url(nav.css);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+
+main {
+    margin: 20px 10px 10px;
+    text-align: center;
+}

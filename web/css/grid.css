@@ -1,0 +1,61 @@
+.grid {
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+.grid td {
+    border: 2px solid #444;
+    width: 50px;
+    height: 50px;
+}
+
+.grid.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Hovering selections */
+
+.grid:not([data-turn="NULL"]) td:hover {
+    cursor: pointer;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.grid[data-turn="X"] td:hover {
+    background-image: url(../img/player_X.svg);
+}
+
+.grid[data-turn="O"] td:hover {
+    background-image: url(../img/player_O.svg);
+}
+
+.grid[data-turn="D"] td:hover {
+    background-image: url(../img/player_D.svg);
+}
+
+/* Moves */
+
+.grid td:not([data-player="NULL"]) {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.grid td[data-player="X"] {
+    background-image: url(../img/player_X.svg);
+    background-color: rgba(200, 124, 0, 0.2);
+}
+
+.grid td[data-player="O"] {
+    background-image: url(../img/player_O.svg);
+    background-color: rgba(30, 170, 46, 0.2)
+}
+
+.grid td[data-player="D"] {
+    background-image: url(../img/player_D.svg);
+    background-color: rgba(0, 50, 200, 0.2);
+}

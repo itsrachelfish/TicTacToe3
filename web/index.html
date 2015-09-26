@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TicTacToe3</title>
+    <link rel="stylesheet" href="css/_styles.css">
+</head>
+<body>
+<nav>
+    <article id="msg-start">
+        <strong>Ready?</strong> Gather 3 people, then click to start: <button class="start">Play</button>
+    </article>
+
+    <article id="msg-turn">
+        It's <strong class="fill1"></strong>'s turn!
+    </article>
+
+    <article id="msg-tie">
+        The board is full! Nobody wins. <button class="start">Play Again</button>
+    </article>
+
+    <article id="msg-win">
+        <strong class="fill1"></strong> wins! <button class="start">Play Again?</button>
+    </article>
+</nav>
+<main>
+    <!--
+        | 0  | 1  | 2  | 3  |
+        | 4  | 5  | 6  | 7  |
+        | 8  | 9  | 10 | 11 |
+        | 12 | 13 | 14 | 15 |
+    -->
+    <table class="grid">
+        <tr>
+            <td data-index="0"></td>
+            <td data-index="1"></td>
+            <td data-index="2"></td>
+            <td data-index="3"></td>
+        </tr>
+        <tr>
+            <td data-index="4"></td>
+            <td data-index="5"></td>
+            <td data-index="6"></td>
+            <td data-index="7"></td>
+        </tr>
+        <tr>
+            <td data-index="8"></td>
+            <td data-index="9"></td>
+            <td data-index="10"></td>
+            <td data-index="11"></td>
+        </tr>
+        <tr>
+            <td data-index="12"></td>
+            <td data-index="13"></td>
+            <td data-index="14"></td>
+            <td data-index="15"></td>
+        </tr>
+    </table>
+
+    <dialog id="gameover">
+        <h1>Game Over</h1>
+        <h2>Winner:</h2>
+        <div class="winner"></div>
+        <div class="direction">with a <span></span> line</div>
+        <button class="start">Play Again?</button>
+    </dialog>
+</main>
+
+<!-- App -->
+<script type="text/javascript" src="packages/browser/dart.js"></script>
+<script type="application/dart" src="main.dart"></script>
+</body>
+</html>

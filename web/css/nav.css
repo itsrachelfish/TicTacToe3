@@ -1,0 +1,28 @@
+nav {
+    width: calc(100% - 30px);
+    height: 30px;
+    padding: 15px;
+    background-color: #26a69a;
+    color: white;
+    box-shadow: 0 0 10px #444;
+    position: absolute;
+    bottom: 0;
+}
+
+nav article {
+    margin-top: 5px;
+}
+
+/* Buttons */
+
+nav button {
+    background-color: #eee;
+    color: #444;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+
+nav button:hover {
+    background-color: white;
+}

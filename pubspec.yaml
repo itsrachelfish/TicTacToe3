@@ -1,0 +1,5 @@
+name: TicTacToe3
+description: 3-player tic tac toe
+dependencies:
+  browser: any
+  transmit: any
