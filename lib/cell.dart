@@ -61,7 +61,17 @@ class Cell {
       });
 
       // Make sure they are all the same
-      return states.every((Player s) => _state == s);
+      /* How it works:
+       * Given an example list of [X, X, X, O], it will be split into
+       * two lists, the first being [X, X, X] and the second [X, X, 0]
+       * (first and last three items), then each list will be checked for
+       * every item being the same. If either list is the same item repeated
+       * 3 times, the game has been won.
+       */
+      return (
+          states.sublist(0, 3).every((Player s) => _state == s) ||
+          states.sublist(1, 4).every((Player s) => _state == s)
+      );
     }
 
     // Check row
