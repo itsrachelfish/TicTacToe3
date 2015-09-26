@@ -1,7 +1,5 @@
 part of TicTacToe3;
 
-UI ui = new UI();
-
 class UI {
   // Collect page elements
   static Element _grid = querySelector(".grid")
