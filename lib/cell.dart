@@ -72,12 +72,12 @@ class Cell {
     // Check column
     if (checkList(getCol())) {
       result["DIRECTION"] = WinDirection.VERTICAL;
-      result["PLAYER"] = UI.cells[getRow()[0]]._state;
+      result["PLAYER"] = UI.cells[getCol()[0]]._state;
     }
     // Check diagonal
     if (checkList(getDiag())) {
       result["DIRECTION"] = WinDirection.DIAGONAL;
-      result["PLAYER"] = UI.cells[getRow()[0]]._state;
+      result["PLAYER"] = UI.cells[getDiag()[0]]._state;
     }
 
     return result;
