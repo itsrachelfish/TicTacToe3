@@ -4,7 +4,7 @@ This game is a 3-player version of Tic Tac Toe.
 
 ## Playing
 
-The grid is 4x4, not the normal 3x3, but you still only need 3 in a row (horizontal, vertical, or diagonal) to win.
+See the [wiki page on how to play](https://github.com/Klikini/TicTacToe3/wiki/Playing)
 
 ## Running
 
