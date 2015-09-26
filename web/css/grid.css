@@ -11,7 +11,7 @@
 
 .grid.disabled {
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 /* No outside borders */
@@ -43,15 +43,21 @@
 }
 
 .grid[data-turn="X"] td:hover {
-    background-image: url(../img/player_X.svg);
+    cursor: url(../img/cursor_X.png), pointer;
 }
 
 .grid[data-turn="O"] td:hover {
-    background-image: url(../img/player_O.svg);
+    cursor: url(../img/cursor_O.png), pointer;
 }
 
 .grid[data-turn="D"] td:hover {
-    background-image: url(../img/player_D.svg);
+    cursor: url(../img/cursor_D.png), pointer;
+}
+
+.grid:not([data-turn="NULL"]) td[data-player="X"]:hover,
+.grid:not([data-turn="NULL"]) td[data-player="O"]:hover,
+.grid:not([data-turn="NULL"]) td[data-player="D"]:hover {
+    cursor: not-allowed;
 }
 
 /* Moves */
