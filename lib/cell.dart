@@ -99,7 +99,7 @@ class Cell {
       }
     }
 
-    return false;
+    return [];
   }
 
   List<int> getCol() {
@@ -117,6 +117,8 @@ class Cell {
         return cols[id];
       }
     }
+
+    return [];
   }
 
   List<int> getDiag() {
