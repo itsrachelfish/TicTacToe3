@@ -1,3 +1,5 @@
+/* Generic dialog */
+
 dialog {
     background-color: #fafafa;
     box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
@@ -6,6 +8,8 @@ dialog {
     top: 10%;
     padding: 10px 10px 30px 10px;
 }
+
+/* Game Over dialog */
 
 dialog#gameover h2 {
     margin-bottom: 0;

@@ -5,16 +5,21 @@ enum Player {
 }
 
 class Game {
+  /// Whose turn it is
   static Player turn;
 
+  /// How many moves have been made (used to find the current turn)
   static int _moves = 0;
 
+  /// Order of players' actions
+  /// Shuffled when each game starts
   static Map<int, Player> _order = {
     0: Player.O,
     1: Player.X,
     2: Player.D
   };
 
+  /// Start the game (will clear any current progress!)
   static void start() {
     // Randomize the move order
     List<Player> newOrder = _order.values.toList()
@@ -44,10 +49,13 @@ class Game {
     });
   }
 
+  /// Stop the game (does not clear display, but it cannot be resumed)
   static void end({Map winner, bool tie}) {
     if (winner != null) {
+      // Game Over modal with winner
       UI.displayGameOver(winner);
     } else if (tie != null && tie == true) {
+      // Navbar text if a tie has occurred (board filled)
       UI.displayMessage("tie");
     }
   }
@@ -55,9 +63,12 @@ class Game {
   static void _getNextTurn() {
     turn = _order[_moves % 3];
     UI.displayMessage("turn", getStateString(turn));
-    UI.grid.dataset["turn"] = getStateString(turn, true);
+    UI._grid.dataset["turn"] = getStateString(turn, true);
   }
 
+  /// @return a String representing a player
+  /// @param state: which player to convert
+  /// @param sanitary: whether to convert Δ to D (for HTML attribute values)
   static String getStateString(Player state, [bool sanitary = false]) {
     switch (state) {
       case Player.O:

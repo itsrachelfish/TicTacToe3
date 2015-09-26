@@ -1,15 +1,23 @@
+/* Webfonts */
+
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 
+/* Other CSS files */
+
 @import url(grid.css);
-@import url(material.css);
+@import url(button.css);
 @import url(modal.css);
 @import url(nav.css);
+
+/* Page styles */
 
 body {
     margin: 0;
     padding: 0;
     font-family: "Raleway", sans-serif;
 }
+
+/* Playing area */
 
 main {
     margin: 20px 10px 10px;

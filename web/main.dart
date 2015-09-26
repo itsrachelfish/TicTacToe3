@@ -17,7 +17,7 @@ void main() {
     new Cell(i);
   }
 
-  // Size table
+  // Size table (will be done again if the browser window resizes)
   UI.sizeTable();
 
   // Prompt for starting
