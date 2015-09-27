@@ -28,7 +28,7 @@ class ColorFader {
 			// If we're getting random colors, get one
 			onColor = rand.nextInt(ColorFader.colors.length);
 		} else {
-			if (onColor != colors.length && onColor != null) {
+			if (onColor != null && colors[onColor] != colors.last) {
 				// If we're going in order, get the next color
 				onColor++;
 			} else {

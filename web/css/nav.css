@@ -29,16 +29,37 @@ nav article {
     margin-top: 5px;
 }
 
+nav aside {
+    float: right;
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    nav aside {
+        display: none;
+    }
+}
+
 /* Buttons */
 
 nav button {
     background-color: #eee;
     color: #444;
-    position: absolute;
-    right: 15px;
-    top: 12px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -12px;
+    position: relative;
+    top: 4px;
 }
 
 nav button:hover {
     background-color: white;
+}
+
+@media (max-width: 500px) {
+    nav button {
+        position: absolute;
+        top: -12px;
+        right: 15px;
+    }
 }
