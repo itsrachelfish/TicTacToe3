@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/mnt/ExpansionHD/Clients/Apps/TicTacToe3/web/img/icon.png"
+   inkscape:export-xdpi="96.722549"
+   inkscape:export-ydpi="96.722549">
+  <defs
+     id="defs4">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4511">
+      <rect
+         style="opacity:1;fill:#e6e6e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4513"
+         width="128"
+         height="128"
+         x="-10"
+         y="936.36218" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter5138">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood5140" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite5142" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3.2"
+         result="blur"
+         id="feGaussianBlur5144" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset5146" />
+      <feComposite
+         in="offset"
+         in2="SourceGraphic"
+         operator="out"
+         result="composite2"
+         id="feComposite5148" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="67.491624"
+     inkscape:cy="80.545145"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-924.3622)">
+    <g
+       transform="matrix(1.2338246,0,0,1.2338246,62.770657,-310.22253)"
+       id="layer1-4"
+       inkscape:label="Layer 1">
+      <circle
+         r="16.762199"
+         cy="1027.3622"
+         cx="25"
+         id="path4136"
+         style="opacity:1;fill:none;fill-opacity:0.89634142;fill-rule:nonzero;stroke:#1eaa2e;stroke-width:7;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       transform="matrix(0.82048036,0,0,0.82048036,83.97822,146.95286)"
+       id="layer1-4-9"
+       inkscape:label="Layer 1" />
+    <g
+       transform="matrix(1.2856487,0,0,1.2856487,2.2425589,-363.46472)"
+       id="layer1-0-2"
+       inkscape:label="Layer 1">
+      <rect
+         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+         y="705.27716"
+         x="720.13245"
+         height="7"
+         width="48"
+         id="rect4176-7"
+         style="opacity:1;fill:#c87c00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:7;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+         y="740.63245"
+         x="-732.77716"
+         height="7"
+         width="48"
+         id="rect4176-8-3"
+         style="opacity:1;fill:#c87c00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:7;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       transform="matrix(0.82048036,0,0,0.82048036,138.92925,146.9329)"
+       id="layer1-4-9-1"
+       inkscape:label="Layer 1" />
+    <g
+       transform="matrix(1.1839104,0,0,1.1839104,5.2929074,-197.8094)"
+       id="layer1-1-6-60"
+       inkscape:label="Layer 1">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4145-7-66"
+         d="m 24.807319,1011.054 -17.2242304,35.5757 34.8007654,0 z"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#0032c8;stroke-width:4.63836479;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       transform="matrix(0.82048036,0,0,0.82048036,167.21352,144.15498)"
+       id="layer1-4-9-6"
+       inkscape:label="Layer 1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:45.53153229px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="72.618904"
+       y="1042.6003"
+       id="text5150"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5152"
+         x="72.618904"
+         y="1042.6003"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:71.143013px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold'">3</tspan></text>
+  </g>
+</svg>
