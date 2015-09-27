@@ -33,3 +33,5 @@ Create an issue on this repository with any requests/bugs and we'll try to work 
 
 * Written in the [Dart](http://dartlang.org) language from Google (it's great!)
 * Depends on the [transmit](https://github.com/ppvk/transmit) library for event routing (it's great, too!)
+
+[![Codeship Status for Klikini/TicTacToe3](https://codeship.com/projects/5cc0a140-46dc-0133-d37e-7a3d06ec36a2/status?branch=master)](https://codeship.com/projects/104970)
