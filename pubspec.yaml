@@ -3,3 +3,6 @@ description: 3-player tic tac toe
 dependencies:
   browser: any
   transmit: any
+transformers:
+- $dart2js:
+    commandLineOptions: [--enable-enums]
