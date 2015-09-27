@@ -10,18 +10,17 @@ class Cell {
    * (see index.html comment above <table...>)
    */
   int _index;
-
   int get index => _index;
+  set index(_) => throw new UnsupportedError("Cannot reassign a cell's index");
 
   /// Reference to the cell's <td> element
   Element _td;
+  Element get td => _td;
+  set td(_) => throw new UnsupportedError("Cannot reassign a cell's element");
 
   /// Stores which move is in the cell (X, O, D, or NULL)
   Player _state;
-
   Player get state => _state;
-
-  /// Updates the player in the cell (including the table's display)
   set state(Player value) {
     // When assigning a value,
     // make sure the cell is not already used,
@@ -73,22 +72,25 @@ class Cell {
     };
 
     // Check a list of indices for wins
-    bool checkList(List<int> indexes) {
+    bool checkList(List<int> indices) {
       // Diagonals sometimes return empty lists,
       // which means the cell is not in a diagonal.
-      if (indexes.length == 0) {
+      if (indices.length == 0) {
         return false;
       }
 
       // Get states of row
       List<Player> states = [];
-      indexes.forEach((int i) {
+      indices.forEach((int i) {
         states.add(UI.cells[i]._state);
       });
 
       if (states.length == 3) {
         // Make sure every cell in lines of 3 cells has the same player in it
-        return states.every((Player s) => _state == s);
+        if (states.every((Player s) => _state == s)) {
+          UI.selectCells(indices, player: _state);
+         return true;
+        }
       } else {
         /*
          * "Divide & Conquer" to check lines with 4 cells
@@ -98,11 +100,17 @@ class Cell {
          * every item being the same. If either list is the same item repeated
          * 3 times, the game has been won.
          */
-        return (
+        if (
             states.sublist(0, 3).every((Player s) => _state == s) ||
             states.sublist(1, 4).every((Player s) => _state == s)
-        );
+        ) {
+          UI.selectCells(indices, player: _state);
+          return true;
+        }
       }
+
+      // No conditions met, no wins
+      return false;
     }
 
     /// @return a list of cells in the same row as this one

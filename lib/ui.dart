@@ -55,6 +55,8 @@ class UI {
     cells.values.forEach((Cell c) {
       c.state = Player.NULL;
     });
+    // Clear selections
+    selectCells([]);
     // Enable mouse events
     grid.classes.remove("disabled");
   }
@@ -116,5 +118,23 @@ class UI {
       }
     });
     return number;
+  }
+
+  /// Mark the listed cells
+  static void selectCells(List<int> indices, {Player player}) {
+    cells.values.forEach((Cell c) {
+      if (indices.length > 0 && player != null) {
+        if (indices.contains(c.index)) {
+          // Select given cells
+          c.td.classes.add("selected-${Game.getStateString(player, true)}");
+        } else {
+          // Unselect cells that aren't listed
+          c.td.classes.removeAll(["selected-X", "selected-O", "selected-D"]);
+        }
+      } else {
+        // Unselect all cells
+        c.td.classes.removeAll(["selected-X", "selected-O", "selected-D"]);
+      }
+    });
   }
 }
