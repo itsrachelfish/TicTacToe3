@@ -31,5 +31,5 @@ main {
     -moz-animation: colorfade 400s linear infinite;
     -o-animation: colorfade 400s linear infinite;
     animation: colorfade 400s linear infinite;
-    transition: background-color 2s linear;
+    transition: background-color 1s linear;
 }

@@ -9,6 +9,7 @@ class ColorFader {
 	set element(Element value) {
 		if (_element == null) {
 			_element = value;
+			_element.classes.add("colorfade");
 		}
 	}
 
