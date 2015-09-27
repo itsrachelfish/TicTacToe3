@@ -6,7 +6,7 @@ class ColorFader {
 
 	Element get element => _element;
 
-	Element set element(Element value) {
+	set element(Element value) {
 		if (_element == null) {
 			_element = value;
 		}
