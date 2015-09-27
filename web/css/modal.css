@@ -5,8 +5,16 @@ dialog {
     box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
     border: none;
     border-radius: 2px;
-    top: 10%;
+    top: -100%;
     padding: 10px 10px 30px 10px;
+    display: block;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+}
+
+dialog[open] {
+    top: 10%;
+    opacity: 0.8;
 }
 
 /* Game Over dialog */

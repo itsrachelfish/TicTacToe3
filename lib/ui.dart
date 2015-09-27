@@ -4,7 +4,7 @@ class UI {
   // Collect page elements
 
   /// Grid <table...>
-  static final Element _grid = querySelector(".grid")
+  static final Element grid = querySelector(".grid")
     ..dataset["turn"] = Game.getStateString(Player.NULL);
 
   /// Game Over dialog
@@ -36,7 +36,7 @@ class UI {
       int cellSize = min(cellWidth, cellHeight);
 
       // Apply this width/height to every cell
-      _grid.querySelectorAll("td").forEach((TableCellElement tce) {
+      grid.querySelectorAll("td").forEach((TableCellElement tce) {
         tce.style
           ..width = "${cellSize.toString()}px"
           ..height = "${cellSize.toString()}px";
@@ -56,7 +56,7 @@ class UI {
       c.state = Player.NULL;
     });
     // Enable mouse events
-    _grid.classes.remove("disabled");
+    grid.classes.remove("disabled");
   }
 
   /// Update the header messages
@@ -102,9 +102,6 @@ class UI {
       _gameOverDialog.open = false;
       Game.start();
     });
-
-    // Disable the grid
-    _grid.classes.add("disabled");
 
     // Show the dialog
     _gameOverDialog.open = true;
