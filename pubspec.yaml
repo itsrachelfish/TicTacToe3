@@ -2,7 +2,8 @@ name: TicTacToe3
 description: 3-player tic tac toe
 dependencies:
   browser: any
-  transmit: any
+  transmit:
+    git: git://github.com/Klikini/transmit.git
   konami_code: any
 transformers:
 - $dart2js:

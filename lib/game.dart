@@ -22,6 +22,9 @@ class Game {
 		2: Player.D
 	};
 
+	/// Listen for events
+	static Service clickListener, winListener;
+
 	/// Start the game (will clear any current progress!)
 	static void start() {
 		void shuffleTurns() {
@@ -37,9 +40,6 @@ class Game {
 		shuffleTurns();
 		// Prevent the same player being listed in every slot
 		// (bug due to overloading at load)
-		while (_order.values.every((Player p) => p == _order[0])) {
-			shuffleTurns();
-		}
 
 		// Clear the board
 		Grid.clear();
@@ -48,11 +48,11 @@ class Game {
 		_getNextTurn();
 		playing = true;
 
-		new Service(["GAME_WON"], (Map win) {
+		winListener = new Service(["GAME_WON"], (Map win) {
 			end(winner: win);
 		});
 
-		new Service(["CELL_CLICKED"], (int index) {
+		clickListener = new Service(["CELL_CLICKED"], (int index) {
 			_moves++;
 			if (playing) {
 				// Game has not been won
@@ -67,7 +67,13 @@ class Game {
 
 	/// Stop the game (does not clear display, but it cannot be resumed)
 	static void end({Map winner, bool tie}) {
+		// Reset the game
 		playing = false;
+		_moves = 0;
+
+		// Stop listening to events
+		clickListener.cancel();
+		winListener.cancel();
 
 		// Disable the grid
 		Grid.disabled = true;
