@@ -33,5 +33,3 @@ Create an issue on this repository with any requests/bugs and we'll try to work 
 
 * Written in the [Dart](http://dartlang.org) language from Google (it's great!)
 * Depends on the [transmit](https://github.com/ppvk/transmit) library for event routing (it's great, too!)
-
-[![Build Status](https://travis-ci.org/Klikini/TicTacToe3.svg?branch=master)](https://travis-ci.org/Klikini/TicTacToe3)
