@@ -6,7 +6,7 @@
 
 @import url(grid.css);
 @import url(button.css);
-@import url(modal.css);
+@import url(dialog.css);
 @import url(nav.css);
 
 /* Page styles */
@@ -22,4 +22,14 @@ body {
 main {
     margin: 20px 10px 10px;
     text-align: center;
+}
+
+/* Color fading */
+
+.colorfade {
+    -webkit-animation: colorfade 400s linear infinite;
+    -moz-animation: colorfade 400s linear infinite;
+    -o-animation: colorfade 400s linear infinite;
+    animation: colorfade 400s linear infinite;
+    transition: background-color 2s linear;
 }

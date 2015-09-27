@@ -1,7 +1,7 @@
 /* Generic dialog */
 
 dialog {
-    background-color: #fafafa;
+    background-color: rgba(250, 250, 250, 0.8);
     box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
     border: none;
     border-radius: 2px;
@@ -14,7 +14,7 @@ dialog {
 
 dialog[open] {
     top: 10%;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 /* Game Over dialog */

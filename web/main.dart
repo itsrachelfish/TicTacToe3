@@ -1,30 +1,39 @@
 library TicTacToe3;
 
+import "dart:async";
 import "dart:html";
 import "dart:math";
 
+import "package:konami_code/konami_code.dart";
 import "package:transmit/transmit.dart";
 
 part "package:TicTacToe3/cell.dart";
+part "package:TicTacToe3/colorfade.dart";
 part "package:TicTacToe3/game.dart";
+part "package:TicTacToe3/grid.dart";
 part "package:TicTacToe3/ui.dart";
 
 Random rand = new Random();
 
 void main() {
-  // Display the board (after loading)
-  window.onLoad.first.then((_) {
-    UI.grid.classes.remove("hidden");
-  });
+	// Set up the page after it loads
+	window.onLoad.first.then((_) {
+		// Size table (will be done again when/if the browser window resizes)
+		UI.sizeTable();
+		// Prompt for starting
+		UI.displayMessage("start");
+		// Display the board
+		Grid.hidden = false;
+	});
 
-  // Initialize cells
-  for (int i = 0; i <= 15; i++) {
-    new Cell(i);
-  }
+	// Initialize cells
+	for (int i = 0; i <= 15; i++) {
+		new Cell(i);
+	}
 
-  // Size table (will be done again if the browser window resizes)
-  UI.sizeTable();
+	// Make the game over replay button colorful
+	new ColorFader(UI.gameOverDialog.querySelector("button"), interval: new Duration(seconds: 1));
 
-  // Prompt for starting
-  UI.displayMessage("start");
+	// Set up Konami code
+	konamiCode.onPerformed.listen((_) => print("Konami!"));
 }
