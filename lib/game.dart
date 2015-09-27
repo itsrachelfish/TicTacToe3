@@ -5,6 +5,9 @@ enum Player {
 }
 
 class Game {
+  /// Whether the game is running
+  static bool playing = false;
+
   /// Whose turn it is
   static Player turn;
 
@@ -21,19 +24,29 @@ class Game {
 
   /// Start the game (will clear any current progress!)
   static void start() {
-    // Randomize the move order
-    List<Player> newOrder = _order.values.toList()
-      ..shuffle();
-    _order
-      ..[0] = newOrder[0]
-      ..[1] = newOrder[1]
-      ..[2] = newOrder[2];
+    void shuffleTurns() {
+      List<Player> newOrder = _order.values.toList()
+        ..shuffle();
+      _order
+        ..[0] = newOrder[0]
+        ..[1] = newOrder[1]
+        ..[2] = newOrder[2];
+    }
+
+    // Randomize player order
+    shuffleTurns();
+    // Prevent the same player being listed in every slot
+    // (bug due to overloading at load)
+    while (_order.values.every((Player p) => p == _order[0])) {
+      shuffleTurns();
+    }
 
     // Clear the board
     UI.clearGrid();
 
     // Start the game
     _getNextTurn();
+    playing = true;
 
     new Service(["GAME_WON"], (Map win) {
       end(winner: win);
@@ -41,16 +54,24 @@ class Game {
 
     new Service(["CELL_CLICKED"], (int index) {
       _moves++;
-      if (UI.countEmptyCells() == 0) {
-        end(tie: true);
-      } else {
-        _getNextTurn();
+      if (playing) {
+        // Game has not been won
+        if (UI.countEmptyCells() == 0) {
+          end(tie: true);
+        } else {
+          _getNextTurn();
+        }
       }
     });
   }
 
   /// Stop the game (does not clear display, but it cannot be resumed)
   static void end({Map winner, bool tie}) {
+    playing = false;
+
+    // Disable the grid
+    UI.grid.classes.add("disabled");
+
     if (winner != null) {
       // Game Over modal with winner
       UI.displayGameOver(winner);
@@ -63,7 +84,7 @@ class Game {
   static void _getNextTurn() {
     turn = _order[_moves % 3];
     UI.displayMessage("turn", getStateString(turn));
-    UI._grid.dataset["turn"] = getStateString(turn, true);
+    UI.grid.dataset["turn"] = getStateString(turn, true);
   }
 
   /// @return a String representing a player

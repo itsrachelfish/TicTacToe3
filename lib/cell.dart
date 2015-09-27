@@ -39,7 +39,7 @@ class Cell {
 
   Cell(this._index, [this._state = Player.NULL]) {
     // Get the element on the page
-    _td = UI._grid.querySelectorAll("td").where((TableCellElement tce) => int.parse(tce.dataset["index"]) == _index).first
+    _td = UI.grid.querySelectorAll("td").where((TableCellElement tce) => int.parse(tce.dataset["index"]) == _index).first
       ..dataset["player"] = "null";
 
     // Store a reference
