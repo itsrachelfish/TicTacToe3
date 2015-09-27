@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="player_O.svg">
+   sodipodi:docname="player_O.svg"
+   inkscape:export-filename="/mnt/ExpansionHD/Clients/Apps/TicTacToe3/web/img/cursor_O.png"
+   inkscape:export-xdpi="111.04"
+   inkscape:export-ydpi="111.04">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -26,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="23.406313"
+     inkscape:cx="14.872084"
      inkscape:cy="22.431645"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -40,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -50,7 +53,7 @@
      id="layer1"
      transform="translate(0,-1002.3622)">
     <circle
-       style="opacity:1;fill:none;fill-opacity:0.89634142;fill-rule:nonzero;stroke:#1eaa2e;stroke-width:7;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:none;fill-opacity:0.89634142;fill-rule:nonzero;stroke:#4caf50;stroke-width:7;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4136"
        cx="25"
        cy="1027.3622"

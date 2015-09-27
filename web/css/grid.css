@@ -10,6 +10,7 @@
     height: 50px;
 }
 
+/* Blur and disable grid */
 .grid[disabled] {
     pointer-events: none;
     -webkit-filter: blur(5px);
@@ -18,58 +19,64 @@
     filter: blur(5px);
 }
 
+/* Hide grid while loading */
 .grid[hidden] {
     opacity: 0;
 }
 
 /* No outside borders */
 
+/* Remove top border of cells in the top row */
 .grid tr:first-child td {
     border-top-color: transparent;
 }
 
+/* Remove bottom border of cells in the bottom row*/
 .grid tr:last-child td {
     border-bottom-color: transparent;
 }
 
+/* Remove left border of cells in the first column */
 .grid tr td:first-child {
     border-left-color: transparent;
 }
 
+/* remove right border of cells in the last column */
 .grid tr td:last-child {
     border-right-color: transparent;
 }
 
-/* Hovering when choosing moves */
+/* Set cursor to the current player's icon */
 
-.grid:not([data-turn="NULL"]) td:hover {
-    cursor: pointer;
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-}
-
-.grid[data-turn="X"] td:hover {
+.grid[data-turn="X"]:hover {
     cursor: url(../img/cursor_X.png), pointer;
 }
 
-.grid[data-turn="O"] td:hover {
+.grid[data-turn="O"]:hover {
     cursor: url(../img/cursor_O.png), pointer;
 }
 
-.grid[data-turn="D"] td:hover {
+.grid[data-turn="D"]:hover {
     cursor: url(../img/cursor_D.png), pointer;
 }
 
-.grid:not([data-turn="NULL"]) td[data-player="X"]:hover,
-.grid:not([data-turn="NULL"]) td[data-player="O"]:hover,
-.grid:not([data-turn="NULL"]) td[data-player="D"]:hover {
-    cursor: not-allowed;
+/* Fill in the background of hovered empty cells */
+
+.grid[data-turn="X"] td[data-player="NULL"]:hover {
+    background-color: #FFECB3;
+}
+
+.grid[data-turn="O"] td[data-player="NULL"]:hover {
+    background-color: #C8E6C9;
+}
+
+.grid[data-turn="D"] td[data-player="NULL"]:hover {
+    background-color: #E1BEE7;
 }
 
 /* Placed moves */
 
+/* All non-empty cells */
 .grid td:not([data-player="NULL"]) {
     background-position: center center;
     background-size: contain;
@@ -77,23 +84,25 @@
     pointer-events: none;
 }
 
+/* Cells with an X */
 .grid td[data-player="X"] {
     background-image: url(../img/player_X.svg);
-    background-color: rgba(200, 124, 0, 0.2);
+    background-color: #FFECB3;
 }
 
+/* Cells with an O */
 .grid td[data-player="O"] {
     background-image: url(../img/player_O.svg);
-    background-color: rgba(30, 170, 46, 0.2)
+    background-color: #C8E6C9
 }
 
+/* Cells with a D */
 .grid td[data-player="D"] {
     background-image: url(../img/player_D.svg);
-    background-color: rgba(0, 50, 200, 0.2);
+    background-color: #E1BEE7;
 }
 
 /* Selected cells */
-
 .grid td[data-player="X"].selected-X::after,
 .grid td[data-player="O"].selected-O::after,
 .grid td[data-player="D"].selected-D::after {

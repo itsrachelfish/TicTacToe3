@@ -8,7 +8,6 @@ import "package:konami_code/konami_code.dart";
 import "package:transmit/transmit.dart";
 
 part "package:TicTacToe3/cell.dart";
-part "package:TicTacToe3/colorfade.dart";
 part "package:TicTacToe3/game.dart";
 part "package:TicTacToe3/grid.dart";
 part "package:TicTacToe3/ui.dart";
@@ -30,9 +29,6 @@ void main() {
 	for (int i = 0; i <= 15; i++) {
 		new Cell(i);
 	}
-
-	// Make the game over replay button colorful
-	new ColorFader(UI.gameOverDialog.querySelector("button"), interval: new Duration(seconds: 1));
 
 	// Set up Konami code
 	konamiCode.onPerformed.listen((_) => print("Konami!"));

@@ -73,7 +73,6 @@ class UI {
 				}
 			}
 		});
-		navbarColor.updateColor();
 	}
 
 	/// Fill & open the Game Over modal
