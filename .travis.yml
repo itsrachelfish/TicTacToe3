@@ -1,3 +1,6 @@
 language: dart
 dart:
   - stable
+global:
+  - GH_REF: github.com/Klikini/TicTacToe3.git
+  - secure: "_"
