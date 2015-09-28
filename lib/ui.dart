@@ -9,8 +9,24 @@ class UI {
 	/// Navbar
 	static final Element navbar = querySelector("nav");
 
-	/// Navbar coloring
-	static final ColorFader navbarColor = new ColorFader(navbar, random: true);
+	/// Whether the Konami code is on
+	static bool get konami {
+		return window.localStorage["ttt3_konami"] != null &&
+		       window.localStorage["ttt3_konami"] == "true";
+	}
+
+	static set konami(bool value) {
+		window.localStorage["ttt3_konami"] = value.toString();
+		updateKonami();
+	}
+
+	static void updateKonami() {
+		if (konami) {
+			document.body.classes.add("konami");
+		} else {
+			document.body.classes.remove("konami");
+		}
+	}
 
 	/// Header messages
 	static final Map<String, Element> _messages = {

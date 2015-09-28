@@ -60,6 +60,20 @@
     cursor: url(../img/cursor_D.png), pointer;
 }
 
+/* When the konami code has been used */
+
+.konami .grid[data-turn="X"]:hover {
+    cursor: url(../img/cursor_X_k.png), pointer;
+}
+
+.konami .grid[data-turn="O"]:hover {
+    cursor: url(../img/cursor_O_k.png), pointer;
+}
+
+.konami .grid[data-turn="D"]:hover {
+    cursor: url(../img/cursor_D_k.png), pointer;
+}
+
 /* Fill in the background of hovered empty cells */
 
 .grid[data-turn="X"] td[data-player="NULL"]:hover {
@@ -99,6 +113,26 @@
 /* Cells with a D */
 .grid td[data-player="D"] {
     background-image: url(../img/player_D.svg);
+    background-color: #E1BEE7;
+}
+
+/* After the konami code */
+
+/* Cells with an X */
+.konami .grid td[data-player="X"] {
+    background-image: url(../img/player_X_k.svg);
+    background-color: #FFECB3;
+}
+
+/* Cells with an O */
+.konami .grid td[data-player="O"] {
+    background-image: url(../img/player_O_k.svg);
+    background-color: #C8E6C9
+}
+
+/* Cells with a D */
+.konami .grid td[data-player="D"] {
+    background-image: url(../img/player_D_k.svg);
     background-color: #E1BEE7;
 }
 

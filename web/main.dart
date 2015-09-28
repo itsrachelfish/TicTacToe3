@@ -17,6 +17,8 @@ Random rand = new Random();
 void main() {
 	// Set up the page after it loads
 	window.onLoad.first.then((_) {
+		// Test konami state
+		UI.updateKonami();
 		// Size table (will be done again when/if the browser window resizes)
 		UI.sizeTable();
 		// Prompt for starting
@@ -31,5 +33,5 @@ void main() {
 	}
 
 	// Set up Konami code
-	konamiCode.onPerformed.listen((_) => print("Konami!"));
+	konamiCode.onPerformed.listen((_) => UI.konami = !UI.konami);
 }
