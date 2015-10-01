@@ -98,7 +98,7 @@ class Cell {
 					return true;
 				}
 			} else {
-				/*
+			/*
 		         * "Divide & Conquer" to check lines with 4 cells
 		         * Given an example list of [X, X, X, O], it will be split into
 		         * two lists, the first being [X, X, X] and the second [X, X, 0]
