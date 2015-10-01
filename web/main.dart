@@ -5,6 +5,7 @@ import "dart:math";
 
 import "package:konami_code/konami_code.dart";
 import "package:transmit/transmit.dart";
+import "package:shake/shake.dart";
 
 part "package:TicTacToe3/cell.dart";
 part "package:TicTacToe3/game.dart";
@@ -33,4 +34,7 @@ void main() {
 
 	// Set up Konami code
 	konamiCode.onPerformed.listen((_) => UI.konami = !UI.konami);
+	new Shake(() {
+		UI.konami = !UI.konami;
+	}, threshold: 10, timeout: new Duration(seconds: 2));
 }
