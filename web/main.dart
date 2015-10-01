@@ -21,7 +21,7 @@ void main() {
 		// Size table (will be done again when/if the browser window resizes)
 		UI.sizeTable();
 		// Prompt for starting
-		UI.displayMessage("start");
+		UI.displayMessage(Message.START);
 		// Display the board
 		Grid.hidden = false;
 	});

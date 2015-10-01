@@ -1,5 +1,9 @@
 part of TicTacToe3;
 
+enum Message {
+	START, TURN, TIE, WIN
+}
+
 class UI {
 	// Collect page elements
 
@@ -27,14 +31,6 @@ class UI {
 			document.body.classes.remove("konami");
 		}
 	}
-
-	/// Header messages
-	static final Map<String, Element> _messages = {
-		"start": querySelector("#msg-start"),
-		"turn": querySelector("#msg-turn"),
-		"tie": querySelector("#msg-tie"),
-		"win": querySelector("#msg-win")
-	};
 
 	/// Resize the table evenly to fit the browser window
 	static void sizeTable() {
@@ -67,8 +63,9 @@ class UI {
 	/// Update the header messages
 	/// @param msg: ID of the message to display (see _messages)
 	/// @param fill1: Text to place into the element with class fill1 (if present: required)
-	static void displayMessage(String msg, [String fill1]) {
-		_messages.forEach((String name, Element element) {
+	static void displayMessage(Message msg, [String fill1]) {
+		Message.values.forEach((Message name) {
+			Element element = querySelector("#msg-${name.toString().split(".")[1].toLowerCase()}");
 			if (name != msg) {
 				// If this is not the desired message, hide it
 				element.hidden = true;
@@ -94,7 +91,7 @@ class UI {
 	/// Fill & open the Game Over modal
 	static void displayGameOver(Map win) {
 		// Update the footer
-		displayMessage("win", Game.getStateString(win["PLAYER"]));
+		displayMessage(Message.WIN, Game.getStateString(win["PLAYER"]));
 
 		// Fill in the icon
 		gameOverDialog.querySelector(".winner").dataset["winner"] = Game.getStateString(win["PLAYER"], true);

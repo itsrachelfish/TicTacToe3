@@ -83,13 +83,13 @@ class Game {
 			UI.displayGameOver(winner);
 		} else if (tie != null && tie == true) {
 			// Navbar text if a tie has occurred (board filled)
-			UI.displayMessage("tie");
+			UI.displayMessage(Message.TIE);
 		}
 	}
 
 	static void _getNextTurn() {
 		turn = _order[_moves % 3];
-		UI.displayMessage("turn", getStateString(turn));
+		UI.displayMessage(Message.TURN, getStateString(turn));
 		Grid.turn = turn;
 	}
 
