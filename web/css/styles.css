@@ -37,10 +37,11 @@ main {
     transition: background-color 1s linear;
 }
 
-/* Reset borders on inputs */
+/* Reset focus/tap styles */
 
 *,
 *:active,
 *:focus {
     outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
