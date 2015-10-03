@@ -24,7 +24,12 @@ class UI {
 		updateKonami();
 	}
 
-	static void updateKonami() {
+	/// Updates the konami display state, or toggles it (if activate is set to true)
+	static void updateKonami([bool activate = false]) {
+		if (activate) {
+			konami = !konami;
+		}
+
 		if (konami) {
 			document.body.classes.add("konami");
 		} else {
