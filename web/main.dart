@@ -25,9 +25,10 @@ void main() {
 		UI.sizeTable();
 		// Prompt for starting
 		UI.displayMessage(Message.START);
-		// Hide the splash screen after 2 more seconds
-		new Timer(new Duration(seconds: 2), () {
-			querySelector("#splash").hidden = true;
+		document.body.hidden = false;
+		// Hide the splash screen after 1 more second (to finish initial animations)
+		new Timer(new Duration(seconds: 1), () {
+			querySelector("#splash").classes.add("away");
 		});
 	});
 
