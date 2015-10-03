@@ -39,8 +39,8 @@ main {
 
 /* Reset borders on inputs */
 
-input,
-input:active,
-input:focus {
+*,
+*:active,
+*:focus {
     outline: none;
 }
