@@ -79,15 +79,15 @@
 
 /* Fill in the background of hovered empty cells */
 
-.grid[data-turn="X"] td[data-player="NULL"]:hover {
+.cell-colours .grid[data-turn="X"] td[data-player="NULL"]:hover {
     background-color: #FFECB3;
 }
 
-.grid[data-turn="O"] td[data-player="NULL"]:hover {
+.cell-colours .grid[data-turn="O"] td[data-player="NULL"]:hover {
     background-color: #C8E6C9;
 }
 
-.grid[data-turn="D"] td[data-player="NULL"]:hover {
+.cell-colours .grid[data-turn="D"] td[data-player="NULL"]:hover {
     background-color: #E1BEE7;
 }
 
@@ -104,19 +104,16 @@
 /* Cells with an X */
 .grid td[data-player="X"] {
     background-image: url(../img/player_X.svg);
-    background-color: #FFECB3;
 }
 
 /* Cells with an O */
 .grid td[data-player="O"] {
     background-image: url(../img/player_O.svg);
-    background-color: #C8E6C9
 }
 
 /* Cells with a D */
 .grid td[data-player="D"] {
     background-image: url(../img/player_D.svg);
-    background-color: #E1BEE7;
 }
 
 /* After the konami code */
@@ -124,18 +121,29 @@
 /* Cells with an X */
 .konami .grid td[data-player="X"] {
     background-image: url(../img/player_X_k.svg);
-    background-color: #FFECB3;
 }
 
 /* Cells with an O */
 .konami .grid td[data-player="O"] {
     background-image: url(../img/player_O_k.svg);
-    background-color: #C8E6C9
 }
 
 /* Cells with a D */
 .konami .grid td[data-player="D"] {
     background-image: url(../img/player_D_k.svg);
+}
+
+/* If cell colours are enabled */
+
+.cell-colours .grid td[data-player="X"] {
+    background-color: #FFECB3;
+}
+
+.cell-colours .grid td[data-player="O"] {
+    background-color: #C8E6C9;
+}
+
+.cell-colours .grid td[data-player="D"] {
     background-color: #E1BEE7;
 }
 

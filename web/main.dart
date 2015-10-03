@@ -1,5 +1,6 @@
 library TicTacToe3;
 
+import "dart:async";
 import "dart:html";
 import "dart:math";
 
@@ -24,8 +25,10 @@ void main() {
 		UI.sizeTable();
 		// Prompt for starting
 		UI.displayMessage(Message.START);
-		// Display the board
-		Grid.hidden = false;
+		// Hide the splash screen after 2 more seconds
+		new Timer(new Duration(seconds: 2), () {
+			querySelector("#splash").hidden = true;
+		});
 	});
 
 	// Initialize cells

@@ -56,14 +56,6 @@ class Grid {
 		}
 	}
 
-	static set hidden(bool hide) {
-		if (hide) {
-			element.hidden = true;
-		} else {
-			element.hidden = false;
-		}
-	}
-
 	/// Updates the cursor on empty cells to the given player
 	static set turn(Player player) => element.dataset["turn"] = Game.getStateString(Game.turn, true);
 
