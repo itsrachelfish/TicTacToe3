@@ -1,6 +1,8 @@
-/* Webfonts */
-
+/* Roboto */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+/* Icons */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 /* Other CSS files */
 
@@ -15,6 +17,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    transition: background-color 0.5s ease-in-out;
 }
 
 /* Playing area */
@@ -32,4 +35,12 @@ main {
     -o-animation: colorfade 400s linear infinite;
     animation: colorfade 400s linear infinite;
     transition: background-color 1s linear;
+}
+
+/* Reset borders on inputs */
+
+input,
+input:active,
+input:focus {
+    outline: none;
 }

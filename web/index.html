@@ -9,11 +9,18 @@
         <link rel="icon" href="img/icon.png">
     </head>
     <body>
+        <!-- Bottom navbar -->
         <nav>
             <aside>
-                <a href="https://github.com/Klikini/TicTacToe3" target="_blank">GitHub</a>
-                <span class="divider">|</span>
-                <a href="https://github.com/Klikini/TicTacToe3/wiki/Playing" target="_blank">Help</a>
+                <a href="https://github.com/Klikini/TicTacToe3" target="_blank" title="Code">
+                    <i class="material-icons">code</i>
+                </a>
+                <a href="https://github.com/Klikini/TicTacToe3/wiki/Playing" target="_blank" title="Help">
+                    <i class="material-icons">help</i>
+                </a>
+                <a href="#" id="settings-btn" title="Settings">
+                    <i class="material-icons">settings</i>
+                </a>
             </aside>
             <article id="msg-start" hidden>
                 <strong>Ready?</strong> Gather 3 people, then click the button to start.
@@ -30,7 +37,10 @@
                 <strong class="fill1"></strong> wins!
             </article>
         </nav>
+
+        <!-- Game area -->
         <main>
+
             <!--
             | 0  | 1  | 2  | 3  |
             | 4  | 5  | 6  | 7  |
@@ -63,16 +73,27 @@
                     <td data-index="15"></td>
                 </tr>
             </table>
+
+            <!-- Game over dialog -->
             <dialog id="gameover">
                 <h1>Game Over</h1>
-
                 <h2>Winner:</h2>
-
                 <div class="winner"></div>
                 <div class="direction">with a <span></span> line</div>
                 <button class="start">Play Again?</button>
             </dialog>
+
+            <!-- Settings dialog -->
+            <dialog id="settings">
+                <h1>Settings</h1>
+                <label>Grid color <input type="color" id="gridColor"></label>
+                <label>Background color <input type="color" id="bgColor"></label>
+                <label>Use icon cursors <input type="checkbox" id="cursors"></label>
+                <button class="close">Done</button>
+            </dialog>
+
         </main>
+
         <!-- App -->
         <script type="application/dart" src="main.dart"></script>
         <script src="packages/browser/dart.js"></script>

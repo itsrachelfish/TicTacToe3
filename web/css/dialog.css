@@ -18,14 +18,14 @@ dialog[open] {
     opacity: 1;
 }
 
+dialog button {
+    margin-top: 50px;
+}
+
 /* Game Over dialog */
 
 dialog#gameover h2 {
     margin-bottom: 0;
-}
-
-dialog#gameover button {
-    margin-top: 50px;
 }
 
 dialog#gameover .winner {
@@ -64,4 +64,39 @@ dialog#gameover .winner[data-winner="D"] {
 
 .konami dialog#gameover .winner[data-winner="D"] {
     background-image: url(../img/player_D_k.svg);
+}
+
+/* Settings dialog */
+
+dialog#settings {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+dialog#settings label {
+    display: block;
+    height: 50px;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+dialog#settings label input {
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+}
+
+dialog#settings input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+dialog#settings input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
 }

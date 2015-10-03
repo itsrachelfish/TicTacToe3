@@ -2,10 +2,13 @@
     border-collapse: collapse;
     display: inline-block;
     transition: all 0.5s ease-in-out;
+    border-color: #444;
 }
 
 .grid td {
-    border: 2px solid #444;
+    border: 2px solid;
+    border-color: inherit;
+    transition: border-color 0.5s ease-in-out;
     width: 50px;
     height: 50px;
 }
@@ -48,29 +51,29 @@
 
 /* Set cursor to the current player's icon */
 
-.grid[data-turn="X"]:hover {
+.cursors .grid[data-turn="X"]:hover {
     cursor: url(../img/cursor_X.png), pointer;
 }
 
-.grid[data-turn="O"]:hover {
+.cursors .grid[data-turn="O"]:hover {
     cursor: url(../img/cursor_O.png), pointer;
 }
 
-.grid[data-turn="D"]:hover {
+.cursors .grid[data-turn="D"]:hover {
     cursor: url(../img/cursor_D.png), pointer;
 }
 
 /* When the konami code has been used */
 
-.konami .grid[data-turn="X"]:hover {
+.konami.cursors .grid[data-turn="X"]:hover {
     cursor: url(../img/cursor_X_k.png), pointer;
 }
 
-.konami .grid[data-turn="O"]:hover {
+.konami.cursors .grid[data-turn="O"]:hover {
     cursor: url(../img/cursor_O_k.png), pointer;
 }
 
-.konami .grid[data-turn="D"]:hover {
+.konami.cursors .grid[data-turn="D"]:hover {
     cursor: url(../img/cursor_D_k.png), pointer;
 }
 

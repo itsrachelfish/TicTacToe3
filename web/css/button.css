@@ -34,3 +34,21 @@ button:active {
     outline: 0;
     box-shadow: none;
 }
+
+/* Settings button */
+
+button#settings-btn {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+button#settings-btn:hover {
+    color: rgba(0, 0, 0, 0.6);
+}

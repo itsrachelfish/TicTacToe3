@@ -8,34 +8,10 @@ class UI {
 	// Collect page elements
 
 	/// Game Over dialog
-	static final DialogElement gameOverDialog = querySelector("#gameover");
+	static final DialogElement gameOverDialog = querySelector("dialog#gameover");
 
 	/// Navbar
 	static final Element navbar = querySelector("nav");
-
-	/// Whether the Konami code is on
-	static bool get konami {
-		return window.localStorage["ttt3_konami"] != null &&
-		       window.localStorage["ttt3_konami"] == "true";
-	}
-
-	static set konami(bool value) {
-		window.localStorage["ttt3_konami"] = value.toString();
-		updateKonami();
-	}
-
-	/// Updates the konami display state, or toggles it (if activate is set to true)
-	static void updateKonami([bool activate = false]) {
-		if (activate) {
-			konami = !konami;
-		}
-
-		if (konami) {
-			document.body.classes.add("konami");
-		} else {
-			document.body.classes.remove("konami");
-		}
-	}
 
 	/// Resize the table evenly to fit the browser window
 	static void sizeTable() {

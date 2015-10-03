@@ -20,11 +20,6 @@ nav a:hover {
     padding-bottom: 4px;
 }
 
-nav .divider {
-    font-weight: bold;
-    margin: 0 2px;
-}
-
 nav article {
     margin-top: 5px;
 }
@@ -32,6 +27,19 @@ nav article {
 nav aside {
     float: right;
     margin-top: 5px;
+}
+
+nav aside a:first-child {
+    margin-right: 2px;
+}
+
+nav aside a:last-child {
+    margin-left: 2px;
+}
+
+nav aside a:not(:first-child):not(:last-child) {
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 @media (max-width: 600px) {
