@@ -101,6 +101,17 @@
             <div class="loader"></div>
         </div>
 
+        <!-- Mobile "Konami" -->
+        <script src="shake.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var shake = new Shake({
+                    threshold: 10,
+                    timeout: 2000
+                }).start();
+            };
+        </script>
+
         <!-- App -->
         <script type="application/dart" src="main.dart"></script>
         <script src="packages/browser/dart.js"></script>

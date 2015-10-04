@@ -3,8 +3,6 @@ description: 3-player tic tac toe
 dependencies:
   browser: any
   konami_code: any
-  shake:
-    git: git://github.com/Klikini/shake.git
   transmit:
     git: git://github.com/Klikini/transmit.git
 transformers:
