@@ -7,6 +7,8 @@
         <title>TicTacToe3</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" href="img/icon.png">
+        <meta name="theme-color" content="#00BCD4">
+        <link rel="manifest" href="webapp.json">
     </head>
     <body>
         <!-- Bottom navbar -->
@@ -105,7 +107,7 @@
         <script src="shake.js"></script>
         <script type="text/javascript">
             window.onload = function () {
-                var shake = new Shake({
+                new Shake({
                     threshold: 10,
                     timeout: 2000
                 }).start();
