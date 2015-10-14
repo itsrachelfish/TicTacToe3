@@ -14,7 +14,7 @@ dialog {
 }
 
 dialog[open] {
-    top: 10%;
+    top: 5%;
     opacity: 1;
 }
 
@@ -99,4 +99,17 @@ dialog#settings input[type="color"]::-webkit-color-swatch {
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
+}
+
+dialog#settings select {
+    background-color: white;
+    border-radius: 2px;
+    padding: 0;
+    border: none;
+    font-family: "Roboto", sans-serif;
+}
+
+dialog#settings label#opponent-csshacks {
+    padding-top: 20px;
+    height: 0;
 }

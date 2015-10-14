@@ -22,6 +22,11 @@
     filter: blur(5px);
 }
 
+/* Disable cursor */
+.grid[locked] {
+    pointer-events: none;
+}
+
 /* Hide grid while loading */
 .grid[hidden] {
     opacity: 0;

@@ -89,9 +89,21 @@ class Game {
 
 	static void _getNextTurn() {
 		turn = _order[_moves % 3];
-		UI.displayMessage(Message.TURN, getStateString(turn));
-		Grid.turn = turn;
-		transmit("TURN", turn);
+		if (!computerOpponent.isNull && computerOpponent.player == Game.turn) {
+			// Computer opponent's turn
+			UI.displayMessage(Message.TURN, "${getStateString(turn)} (computer)");
+			Grid.turn = turn;
+			Grid.locked = true;
+			new Timer(new Duration(seconds: 1), () {
+				// Wait 1 second, then move
+				computerOpponent.move();
+				Grid.locked = false;
+			});
+		} else {
+			// No computer opponent, or normal turn
+			UI.displayMessage(Message.TURN, getStateString(turn));
+			Grid.turn = turn;
+		}
 	}
 
 	/// Computer opponent

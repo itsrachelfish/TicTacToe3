@@ -35,13 +35,12 @@ class Settings {
 
 		// Computer opponent
 		opponent = new StringSetting("computerOpponent", callback: (String opponent) {
-			print(opponent);
 			Player computer = Player.values.where((Player p) {
-				return (p.toString() == opponent.split("_")[1]);
+				return (p.toString().split(".")[1] == opponent.split("_")[1]);
 			}).toList().first;
 			if (computer != Player.NULL) {
 				Difficulty difficulty = Difficulty.values.where((Difficulty d) {
-					return (d.toString() == opponent.split("_")[0]);
+					return (d.toString().split(".")[1] == opponent.split("_")[0]);
 				});
 				Game.computerOpponent = new Opponent(computer, difficulty);
 			}

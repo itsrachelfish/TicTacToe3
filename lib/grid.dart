@@ -60,6 +60,17 @@ class Grid {
 		}
 	}
 
+	/// Prevent cursor interaction
+	static set locked(bool lock) {
+		if (lock) {
+			if (!element.attributes.containsKey("locked")) {
+				element.attributes.addAll(({"locked": ""}));
+			}
+		} else {
+			element.attributes.remove("locked");
+		}
+	}
+
 	/// Updates the cursor on empty cells to the given player
 	static set turn(Player player) => element.dataset["turn"] = Game.getStateString(Game.turn, true);
 
