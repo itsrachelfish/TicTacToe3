@@ -29,13 +29,17 @@ class Grid {
 
 	/// @return number of cells without moves in them
 	static int get emptyCells {
-		int number = 0;
+		return emptyCellsList.length;
+	}
+
+	static List<int> get emptyCellsList {
+		List<int> empty = [];
 		cells.values.forEach((Cell c) {
 			if (c._state == Player.NULL) {
-				number++;
+				empty.add(c._index);
 			}
 		});
-		return number;
+		return empty;
 	}
 
 	/// Reference to cells

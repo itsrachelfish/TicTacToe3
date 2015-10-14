@@ -2,7 +2,7 @@ part of TicTacToe3;
 
 class Settings {
 	static BooleanSetting iconCursors, cellColours;
-	static StringSetting gridColour, bgColour;
+	static StringSetting gridColour, bgColour, opponent;
 
 	static void init() {
 		// Whether or not to use the player's symbol as the cursor
@@ -32,6 +32,20 @@ class Settings {
 		bgColour = new StringSetting("bgColour", callback: (String newValue) {
 			document.body.style.backgroundColor = newValue;
 		}, defaultValue: "#FFFFFF");
+
+		// Computer opponent
+		opponent = new StringSetting("computerOpponent", callback: (String opponent) {
+			print(opponent);
+			Player computer = Player.values.where((Player p) {
+				return (p.toString() == opponent.split("_")[1]);
+			}).toList().first;
+			if (computer != Player.NULL) {
+				Difficulty difficulty = Difficulty.values.where((Difficulty d) {
+					return (d.toString() == opponent.split("_")[0]);
+				});
+				Game.computerOpponent = new Opponent(computer, difficulty);
+			}
+		}, defaultValue: "NULL_NULL");
 
 		// Load konami
 		updateKonami();
@@ -118,7 +132,7 @@ class BooleanSetting {
 class StringSetting {
 	String _id;
 	String _value;
-	InputElement _input;
+	Element _input;
 	Function _callback = (String newValue) {};
 
 	StringSetting(String id, {Function callback, String defaultValue: ""}) : _id = id, _callback = callback {
@@ -128,7 +142,7 @@ class StringSetting {
 			value = defaultValue;
 		}
 
-		_input = (querySelector("#$id") as InputElement)
+		_input = querySelector("#$id")
 			..onChange.listen((_) => value = _input.value);
 		_input.value = value;
 	}

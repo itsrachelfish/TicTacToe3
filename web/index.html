@@ -92,6 +92,21 @@
                 <label>Background colour <input type="color" id="bgColour"></label>
                 <label>Use icon cursors <input type="checkbox" id="cursors"></label>
                 <label>Colour cells <input type="checkbox" id="cellColours"></label>
+                <label>Computer opponent
+                    <select id="computerOpponent">
+                        <option value="NULL_NULL">None</option>
+                        <optgroup label="Easy">
+                            <option value="EASY_X">X</option>
+                            <option value="EASY_O">O</option>
+                            <option value="EASY_D">Δ</option>
+                        </optgroup>
+                        <optgroup label="Hard">
+                            <option value="HARD_X">X</option>
+                            <option value="HARD_O">O</option>
+                            <option value="HARD_D">Δ</option>
+                        </optgroup>
+                    </select>
+                </label>
                 <button class="close">Done</button>
             </dialog>
 

@@ -180,6 +180,11 @@ class Cell {
 	/// Turn WinDirection.HORIZONTAL into "horizontal"
 	static String getWinDirString(WinDirection direction) => direction.toString().split(".")[1].toLowerCase();
 
+	/// Make a move in the cell
+	void mark(Player player) {
+		_state = player;
+	}
+
 	@override
 	String toString() {
 		return "<Cell at $_index with value $_state>";

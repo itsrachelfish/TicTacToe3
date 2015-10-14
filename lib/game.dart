@@ -91,7 +91,11 @@ class Game {
 		turn = _order[_moves % 3];
 		UI.displayMessage(Message.TURN, getStateString(turn));
 		Grid.turn = turn;
+		transmit("TURN", turn);
 	}
+
+	/// Computer opponent
+	static Opponent computerOpponent = new Opponent(Player.NULL, Difficulty.NULL);
 
 	/// @return a String representing a player
 	/// @param state: which player to convert
