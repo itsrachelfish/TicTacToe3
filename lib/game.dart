@@ -89,7 +89,6 @@ class Game {
 
 	static void _getNextTurn() {
 		turn = _order[_moves % 3];
-		print(computerOpponent);
 		if (!computerOpponent.isNull && computerOpponent.player == Game.turn) {
 			// Computer opponent's turn
 			UI.displayMessage(Message.TURN, "${getStateString(turn)} (computer)");
