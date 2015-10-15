@@ -29,13 +29,17 @@ class Grid {
 
 	/// @return number of cells without moves in them
 	static int get emptyCells {
-		int number = 0;
+		return emptyCellsList.length;
+	}
+
+	static List<int> get emptyCellsList {
+		List<int> empty = [];
 		cells.values.forEach((Cell c) {
 			if (c._state == Player.NULL) {
-				number++;
+				empty.add(c._index);
 			}
 		});
-		return number;
+		return empty;
 	}
 
 	/// Reference to cells
@@ -56,8 +60,19 @@ class Grid {
 		}
 	}
 
+	/// Prevent cursor interaction
+	static set locked(bool lock) {
+		if (lock) {
+			if (!element.attributes.containsKey("locked")) {
+				element.attributes.addAll(({"locked": ""}));
+			}
+		} else {
+			element.attributes.remove("locked");
+		}
+	}
+
 	/// Updates the cursor on empty cells to the given player
-	static set turn(Player player) => element.dataset["turn"] = Game.getStateString(Game.turn, true);
+	static set turn(Player player) => element.dataset["turn"] = getStateString(Game.turn, true);
 
 	/// @return: list of all cell elements (<td>s)
 	static List<TableCellElement> get cellElements => element.querySelectorAll("td").toList();

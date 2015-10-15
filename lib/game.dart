@@ -89,26 +89,23 @@ class Game {
 
 	static void _getNextTurn() {
 		turn = _order[_moves % 3];
-		UI.displayMessage(Message.TURN, getStateString(turn));
-		Grid.turn = turn;
-	}
-
-	/// @return a String representing a player
-	/// @param state: which player to convert
-	/// @param sanitary: whether to convert Δ to D (for HTML attribute values)
-	static String getStateString(Player state, [bool sanitary = false]) {
-		switch (state) {
-			case Player.O:
-				return "O";
-			case Player.X:
-				return "X";
-			case Player.D:
-				if (sanitary) {
-					return "D";
-				}
-				return "Δ";
-			case Player.NULL:
-				return "NULL";
+		if (!computerOpponent.isNull && computerOpponent.player == Game.turn) {
+			// Computer opponent's turn
+			UI.displayMessage(Message.TURN, "${getStateString(turn)} (computer)");
+			Grid.turn = turn;
+			Grid.locked = true;
+			new Timer(new Duration(milliseconds: 500), () {
+				// Wait half a second, then move
+				computerOpponent.move();
+				Grid.locked = false;
+			});
+		} else {
+			// No computer opponent, or normal turn
+			UI.displayMessage(Message.TURN, getStateString(turn));
+			Grid.turn = turn;
 		}
 	}
+
+	/// Computer opponent
+	static Opponent computerOpponent = new Opponent();
 }

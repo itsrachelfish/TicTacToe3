@@ -35,7 +35,7 @@ class Cell {
 			// Update the state in memory
 			_state = value;
 			// Update the table display
-			_td.dataset["player"] = Game.getStateString(_state, true);
+			_td.dataset["player"] = getStateString(_state, true);
 		} else {
 			// Do not allow re-setting of cells (only clearing)
 			throw new StateError("Cell has already been filled");
@@ -51,22 +51,25 @@ class Cell {
 		Grid.cells[_index] = this;
 
 		// Set up click listeners
-		_td.onClick.listen((_) {
-			// Update the state
-			state = Game.turn;
-			// Check for winning moves
-			Map winStatus = checkWins();
-			// Check if the game has been won (and how)
-			if (
-			winStatus["DIRECTION"] != WinDirection.NONE &&
-			winStatus["PLAYER"] != Player.NULL
-			) {
-				// Notify the game to end
-				transmit("GAME_WON", winStatus);
-			}
-			// Notify the game to move on to the next player
-			transmit("CELL_CLICKED", _index);
-		});
+		_td.onClick.listen((_) => update());
+	}
+
+	/// Update the state (after a click/mark)
+	void update() {
+		// Update the state
+		state = Game.turn;
+		// Check for winning moves
+		Map winStatus = checkWins();
+		// Check if the game has been won (and how)
+		if (
+		winStatus["DIRECTION"] != WinDirection.NONE &&
+		winStatus["PLAYER"] != Player.NULL
+		) {
+			// Notify the game to end
+			transmit("GAME_WON", winStatus);
+		}
+		// Notify the game to move on to the next player
+		transmit("CELL_CLICKED", _index);
 	}
 
 	/// Check if a given list of cells counts as a win
@@ -181,7 +184,5 @@ class Cell {
 	static String getWinDirString(WinDirection direction) => direction.toString().split(".")[1].toLowerCase();
 
 	@override
-	String toString() {
-		return "<Cell at $_index with value $_state>";
-	}
+	String toString() => "<Cell at $_index with value $_state>";
 }
