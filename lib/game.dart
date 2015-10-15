@@ -89,13 +89,14 @@ class Game {
 
 	static void _getNextTurn() {
 		turn = _order[_moves % 3];
+		print(computerOpponent);
 		if (!computerOpponent.isNull && computerOpponent.player == Game.turn) {
 			// Computer opponent's turn
 			UI.displayMessage(Message.TURN, "${getStateString(turn)} (computer)");
 			Grid.turn = turn;
 			Grid.locked = true;
-			new Timer(new Duration(seconds: 1), () {
-				// Wait 1 second, then move
+			new Timer(new Duration(milliseconds: 500), () {
+				// Wait half a second, then move
 				computerOpponent.move();
 				Grid.locked = false;
 			});
@@ -107,24 +108,5 @@ class Game {
 	}
 
 	/// Computer opponent
-	static Opponent computerOpponent = new Opponent(Player.NULL, Difficulty.NULL);
-
-	/// @return a String representing a player
-	/// @param state: which player to convert
-	/// @param sanitary: whether to convert Δ to D (for HTML attribute values)
-	static String getStateString(Player state, [bool sanitary = false]) {
-		switch (state) {
-			case Player.O:
-				return "O";
-			case Player.X:
-				return "X";
-			case Player.D:
-				if (sanitary) {
-					return "D";
-				}
-				return "Δ";
-			case Player.NULL:
-				return "NULL";
-		}
-	}
+	static Opponent computerOpponent = new Opponent();
 }

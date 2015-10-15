@@ -35,7 +35,7 @@ class Cell {
 			// Update the state in memory
 			_state = value;
 			// Update the table display
-			_td.dataset["player"] = Game.getStateString(_state, true);
+			_td.dataset["player"] = getStateString(_state, true);
 		} else {
 			// Do not allow re-setting of cells (only clearing)
 			throw new StateError("Cell has already been filled");

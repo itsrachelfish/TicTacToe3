@@ -72,10 +72,10 @@ class UI {
 	/// Fill & open the Game Over modal
 	static void displayGameOver(Map win) {
 		// Update the footer
-		displayMessage(Message.WIN, Game.getStateString(win["PLAYER"]));
+		displayMessage(Message.WIN, getStateString(win["PLAYER"]));
 
 		// Fill in the icon
-		gameOverDialog.querySelector(".winner").dataset["winner"] = Game.getStateString(win["PLAYER"], true);
+		gameOverDialog.querySelector(".winner").dataset["winner"] = getStateString(win["PLAYER"], true);
 
 		// Fill in the direction
 		gameOverDialog.querySelector(".direction span").text = Cell.getWinDirString(win["DIRECTION"]);
@@ -96,7 +96,7 @@ class UI {
 			if (indices.length > 0 && player != null) {
 				if (indices.contains(c.index)) {
 					// Select given cells
-					c.td.classes.add("selected-${Game.getStateString(player, true)}");
+					c.td.classes.add("selected-${getStateString(player, true)}");
 				} else {
 					// Unselect cells that aren't listed
 					c.td.classes.removeAll(["selected-X", "selected-O", "selected-D"]);

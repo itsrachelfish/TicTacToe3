@@ -72,7 +72,7 @@ class Grid {
 	}
 
 	/// Updates the cursor on empty cells to the given player
-	static set turn(Player player) => element.dataset["turn"] = Game.getStateString(Game.turn, true);
+	static set turn(Player player) => element.dataset["turn"] = getStateString(Game.turn, true);
 
 	/// @return: list of all cell elements (<td>s)
 	static List<TableCellElement> get cellElements => element.querySelectorAll("td").toList();

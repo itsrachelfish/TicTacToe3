@@ -9,6 +9,7 @@ import "package:transmit/transmit.dart";
 
 part "package:TicTacToe3/cell.dart";
 part "package:TicTacToe3/game.dart";
+part "package:TicTacToe3/globals.dart";
 part "package:TicTacToe3/grid.dart";
 part "package:TicTacToe3/opponent.dart";
 part "package:TicTacToe3/settings.dart";

@@ -5,12 +5,14 @@ enum Difficulty {
 }
 
 class Opponent {
-	Player _player = Player.NULL;
+	Player _player;
 	Player get player => _player;
-	Difficulty _difficulty = Difficulty.NULL;
+
+	Difficulty _difficulty;
 	Difficulty get difficulty => _difficulty;
 
-	Opponent(Player player, Difficulty difficulty) : _player = player, _difficulty = difficulty;
+	Opponent([Player player = Player.NULL, Difficulty difficulty = Difficulty.NULL])
+	: _player = player, _difficulty = difficulty;
 
 	void move() {
 		int index;
