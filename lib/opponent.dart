@@ -1,7 +1,7 @@
 part of TicTacToe3;
 
 enum Difficulty {
-	_EASY, HARD, NULL
+	EASY, HARD, NULL
 }
 
 class Opponent {

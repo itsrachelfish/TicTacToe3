@@ -6,7 +6,7 @@ enum WinDirection {
 
 class Cell {
 	/**
-	 * Number of the cell on the grid
+	 * Number of the [Cell] on the grid
 	 * (see index.html comment above <table...>)
 	 */
 	int _index;
@@ -15,14 +15,14 @@ class Cell {
 
 	set index(_) => throw new UnsupportedError("Cannot reassign a cell's index");
 
-	/// Reference to the cell's <td> element
+	/// Reference to the [Cell]'s <td> element
 	Element _td;
 
 	Element get td => _td;
 
 	set td(_) => throw new UnsupportedError("Cannot reassign a cell's element");
 
-	/// Stores which move is in the cell (X, O, D, or NULL)
+	/// Stores which [Player] is in the [Cell] (X, O, D, or NULL)
 	Player _state;
 
 	Player get state => _state;
@@ -54,7 +54,7 @@ class Cell {
 		_td.onClick.listen((_) => update());
 	}
 
-	/// Update the state (after a click/mark)
+	/// Update the [state] (after a click/mark)
 	void update() {
 		// Update the state
 		state = Game.turn;
@@ -72,7 +72,7 @@ class Cell {
 		transmit("CELL_CLICKED", _index);
 	}
 
-	/// Check if a given list of cells counts as a win
+	/// Check if a given list of [Cell]s counts as a win
 	Map<String, dynamic> checkWins() {
 		// Default result if no wins are present
 		Map result = {
@@ -121,7 +121,7 @@ class Cell {
 			return false;
 		}
 
-		/// @return a list of cells in the same row as this one
+		/// Returns a list of [Cell]s in the same [Grid.rows](row) as this one
 		List<int> getRow() {
 			// List of rows and the cells in each
 			for (int id in Grid.rows.keys) {
@@ -135,7 +135,7 @@ class Cell {
 			return [];
 		}
 
-		/// @return a list of cells in the same column as this one
+		/// Returns a list of cells in the same [Grid.cols](column) as this one
 		List<int> getCol() {
 			// List of columns and the cells in each
 			for (int id in Grid.cols.keys) {
@@ -149,7 +149,7 @@ class Cell {
 			return [];
 		}
 
-		/// @return a list of cells in the same diagonal line as this one
+		/// Returns a list of cells in the same [Grid.diags](diagonal line) as this one
 		List<int> getDiag() {
 			// List of diagonal lines and the cells in each
 			for (int id in Grid.diags.keys) {
