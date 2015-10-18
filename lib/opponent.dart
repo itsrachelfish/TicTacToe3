@@ -124,7 +124,6 @@ class Opponent {
 					for (Player p in moves) {
 						if (p == Player.NULL) {
 							// Found empty cell? Return its index
-							window.console.info(i);
 							return indices[i];
 						}
 						// Update the search index

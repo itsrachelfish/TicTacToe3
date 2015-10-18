@@ -77,7 +77,8 @@ class Cell {
 		// Default result if no wins are present
 		Map result = {
 			"DIRECTION": WinDirection.NONE,
-			"PLAYER": _state
+			"PLAYER": _state,
+			"FOUR_IN_A_ROW": false
 		};
 
 		// Check a list of indices for wins
@@ -94,6 +95,11 @@ class Cell {
 				states.add(Grid.cells[i]._state);
 			});
 
+			// Check for 4 in a row (vs normal 3)
+			if (states.length == 4 && states.where((Player s) => s == _state).toList().length == 4) {
+				result["FOUR_IN_A_ROW"] = true;
+			}
+
 			if (states.length == 3) {
 				// Make sure every cell in lines of 3 cells has the same player in it
 				if (states.every((Player s) => _state == s)) {
@@ -101,7 +107,7 @@ class Cell {
 					return true;
 				}
 			} else {
-			/*
+				/*
 		         * "Divide & Conquer" to check lines with 4 cells
 		         * Given an example list of [X, X, X, O], it will be split into
 		         * two lists, the first being [X, X, X] and the second [X, X, 0]

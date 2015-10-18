@@ -113,3 +113,47 @@ dialog#settings label#opponent-csshacks {
     padding-top: 20px;
     height: 0;
 }
+
+/* Scores dialog */
+
+dialog#scores > div {
+    display: flex;
+    flex-direction: row;
+}
+
+dialog#scores div:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+dialog#scores > div > div.score {
+    flex: 1;
+}
+
+dialog#scores .icon {
+    width: 100px;
+    height: 100px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+dialog#scores .icon[data-icon="X"] {
+    background-image: url(../img/player_X.svg);
+}
+
+dialog#scores .icon[data-icon="O"] {
+    background-image: url(../img/player_O.svg);
+}
+
+dialog#scores .icon[data-icon="D"] {
+    background-image: url(../img/player_D.svg);
+}
+
+dialog#scores .score {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
+}

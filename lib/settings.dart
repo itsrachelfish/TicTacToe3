@@ -76,7 +76,8 @@ class Settings {
 }
 
 class SettingsWindow {
-	static final DialogElement _element = querySelector("dialog#settings");
+	static final DialogElement _element = querySelector("dialog#settings")
+		..querySelector(".score_reset").onClick.listen((_) => Score.resetAll());
 
 	static set open(bool setOpen) {
 		if (setOpen) {

@@ -82,7 +82,27 @@
                 <h2>Winner:</h2>
                 <div class="winner"></div>
                 <div class="direction">with a <span></span> line</div>
+                <div class="numcells"><span></span> in a row</div>
                 <button class="start">Play Again?</button>
+                <button class="scores">View Scores</button>
+            </dialog>
+
+            <!-- Scores dialog -->
+            <dialog id="scores">
+                <h1>Scores</h1>
+                <div class="x">
+                    <div class="icon" data-icon="X"></div>
+                    <div class="score score-x"></div>
+                </div>
+                <div class="o">
+                    <div class="icon" data-icon="O"></div>
+                    <div class="score score-o"></div>
+                </div>
+                <div class="d">
+                    <div class="icon" data-icon="D"></div>
+                    <div class="score score-d"></div>
+                </div>
+                <button class="close">Close</button>
             </dialog>
 
             <!-- Settings dialog -->
@@ -107,6 +127,7 @@
                         </optgroup>
                     </select>
                 </label>
+                <button class="score_reset">Reset Scores</button>
                 <button class="close">Done</button>
             </dialog>
 
