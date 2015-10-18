@@ -35,5 +35,10 @@ class Score {
 		scores.values.forEach((Score s) {
 			s.reset();
 		});
+
+		if (UI.scoresDialog.open) {
+			UI.scoresDialog.open = false;
+			UI.displayScores();
+		}
 	}
 }
