@@ -10,6 +10,9 @@ class UI {
 	/// Game Over dialog
 	static final DialogElement gameOverDialog = querySelector("dialog#gameover");
 
+	/// Scores dialog
+	static final DialogElement scoresDialog = querySelector("dialog#scores");
+
 	/// Navbar
 	static final Element navbar = querySelector("nav");
 
@@ -80,14 +83,43 @@ class UI {
 		// Fill in the direction
 		gameOverDialog.querySelector(".direction span").text = Cell.getWinDirString(win["DIRECTION"]);
 
-		// Activate the button
+		// 4 in a row?
+		String numCells;
+		if (win["FOUR_IN_A_ROW"]) {
+			numCells = "4";
+		} else {
+			numCells = "3";
+		}
+		gameOverDialog.querySelector(".numcells span").text = numCells;
+
+		// Activate the buttons
 		gameOverDialog.querySelector("button.start").onClick.first.then((_) {
 			gameOverDialog.open = false;
 			Game.start();
 		});
 
+		gameOverDialog.querySelector("button.scores").onClick.listen((_) {
+			displayScores();
+		});
+
 		// Show the dialog
 		gameOverDialog.open = true;
+	}
+
+	static void displayScores() {
+		// Fill in the scores
+		scoresDialog
+			..querySelector(".score-x").text = Score.scores[Player.X].points.toString()
+			..querySelector(".score-o").text = Score.scores[Player.O].points.toString()
+			..querySelector(".score-d").text = Score.scores[Player.D].points.toString();
+
+		// Set up the close button
+		scoresDialog.querySelector(".close").onClick.first.then((_) {
+			scoresDialog.open = false;
+		});
+
+		// Show the dialog
+		scoresDialog.open = true;
 	}
 
 	/// Mark the listed cells

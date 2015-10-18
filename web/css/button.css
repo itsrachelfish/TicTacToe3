@@ -93,3 +93,8 @@ input[type="checkbox"]:checked::before {
     border-bottom-width: 5px;
     border-color: white;
 }
+
+button.score_reset,
+button.scores {
+    background-color: #F44336;
+}

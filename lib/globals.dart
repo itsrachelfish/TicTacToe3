@@ -1,8 +1,11 @@
 part of TicTacToe3;
 
-/// @return a String representing a player
-/// @param state: which player to convert
-/// @param sanitary: whether to convert Δ to D (for HTML attribute values)
+/// Global [Random] instance
+Random rand = new Random();
+
+/// Returns a String representing a player.
+/// [state]: which player to convert
+/// [sanitary]: whether to convert Δ to D (for HTML attribute values)
 String getStateString(Player state, [bool sanitary = false]) {
 	switch (state) {
 		case Player.O:
@@ -19,6 +22,8 @@ String getStateString(Player state, [bool sanitary = false]) {
 	}
 }
 
+/// Return a [Difficulty] converted from the given [difficulty] string.
+/// [difficulty] can contain "Difficulty.", but it does not have to
 Difficulty parseDifficulty(String difficulty) {
 	if (!difficulty.contains(".")) {
 		difficulty = "Difficulty." + difficulty;
@@ -33,6 +38,8 @@ Difficulty parseDifficulty(String difficulty) {
 	return Difficulty.NULL;
 }
 
+/// Return a [Player] converted from the given [player] string.
+/// [player] can contain "Player.", but it does not have to
 Player parsePlayer(String player) {
 	if (!player.contains(".")) {
 		player = "Player." + player;

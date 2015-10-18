@@ -81,6 +81,14 @@ class Game {
 		if (winner != null) {
 			// Game Over modal with winner
 			UI.displayGameOver(winner);
+			// Add points to the winner
+			if (winner["FOUR_IN_A_ROW"] == false) {
+				// 3 in a row
+				Score.scores[winner["PLAYER"]].increment();
+			} else {
+				// 4 in a row
+				Score.scores[winner["PLAYER"]].increment(2);
+			}
 		} else if (tie != null && tie == true) {
 			// Navbar text if a tie has occurred (board filled)
 			UI.displayMessage(Message.TIE);
