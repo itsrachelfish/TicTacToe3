@@ -1,0 +1,52 @@
+/* Roboto */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+/* Icons */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* Other CSS files */
+
+@import url(grid.css);
+@import url(button.css);
+@import url(dialog.css);
+@import url(splash.css);
+@import url(nav.css);
+
+/* Page styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Playing area */
+
+main {
+    margin: 20px 10px 10px;
+    text-align: center;
+}
+
+/* Color fading */
+
+.colorfade {
+    -webkit-animation: colorfade 400s linear infinite;
+    -moz-animation: colorfade 400s linear infinite;
+    -o-animation: colorfade 400s linear infinite;
+    animation: colorfade 400s linear infinite;
+    transition: background-color 1s linear;
+}
+
+/* Reset focus/tap styles */
+
+*,
+*:active,
+*:focus {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
